@@ -1,0 +1,9 @@
+FS Module Functions are:
+1. writeFile()
+2. appendFile()
+3. readFile()
+4. rename()
+5. Unlink()//use for delete
+6. Exists()
+
+These functios are asynchronous 

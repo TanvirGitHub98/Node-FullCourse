@@ -1,0 +1,4 @@
+Step to use env variable:
+1. install dotenv package
+2. require dotenv-> require('dotenv').config()
+3. for access-> process.env.variableName

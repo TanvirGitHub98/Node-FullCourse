@@ -1,0 +1,1 @@
+static middleware used to work with static data like image, style etc.

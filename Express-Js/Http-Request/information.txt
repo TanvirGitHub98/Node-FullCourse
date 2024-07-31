@@ -1,0 +1,7 @@
+Request parameter
+1. Route Parameter-> req.params.ParameterName//localhost:3000/id/101/name/tanvir
+(here in router.get('/reg/id/:id/name/:name) we need to handle it.)
+2. Query Parameter-> req.query.ParameterName//localhost:3000?id=101&age=20&name=tanvir
+3. Headers-> req.header('key')
+4. Json/formData inside body-> req.body.parameterName
+Note: Here you need to place body parser code into app.js file otherwise it will not work

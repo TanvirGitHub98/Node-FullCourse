@@ -1,0 +1,26 @@
+Middleware is a function which contain 3 things like req obj res obj and next() function.
+Types of Middleware:
+  1. application Middleware
+       app.use(req,res,next){
+
+       }
+       or app.get/post/put/delete/patch(req,res,next)=>{
+
+       }
+2. outer level Middleware
+       router.use(req,res,next)=.{
+
+       }
+       or router.method(......)={
+
+       }
+3. Error handling Middleware
+      app.use(err,req,res,next)=>{
+
+      }
+4. Buitin Middleware
+     express.urlencoded()
+     express.json()
+     express.static
+5. Third party Middleware
+     cookie-parser
