@@ -1,0 +1,86 @@
+for saving data:
+     model.save();
+for finding All data:
+      model.find();
+for finding a single data based on condition
+      model.find({dbId:IdFromUI})-> it will return an array
+for finding a single data based on condition
+      model.findOne({dbId:IdFromUI})-> it will return an obj
+If want to see a specific from property:
+      model.findOne({dbId:IdFromUI}).select({
+        title:1,
+        price:0
+      })--> it will show title and hide price
+we can do this work in another way
+      model.findOne({dbId:IdFromUI},{
+        title:1,
+        price:0
+      })
+
+----------------Comparison Operator-------------
+     1. $eq--->equal
+     2. $ne---> not equal
+     3. $gt--->greater than
+     4. $gte--->greater than equal
+     5. $lt---> less than Operator
+     6. $lte--->less than equal
+     4. $in--->value is in array or not
+     8. $nin---> not in
+
+ ----------------Logical Operator-------------
+     1. $and
+     2. $or
+     3. $not
+     4. $nor
+
+-----------------Delete------------------------
+1. DeleteOne({_id:id})--> Only it will delete elements
+2. findByIdAndDelete({_id:id})--> will store deleted item info
+
+-----------------Update------------------------
+1. updateOne({_id:id})--> Only it will update elements
+2. findByIdAndUpdate({_id:id})--> will store updated item info
+*** But in case of findByIdAndUpdate() to get instant updated response
+    we need to use{ new: true} just after updated block part
+
+
+
+------------------Buitin Schema Validation----------
+for string:
+    minlength:length size
+    maxlength: length size
+    trim:true--> will remove white space
+    enum: ['iphone','samsung']--> it will only allow this value
+    if you want to set message in enum
+    enum:{
+      values:['iphone','samsung'],
+      message:"{VALUE} is not supported"
+
+    }
+for number:
+   min: numSize
+   max: numSize
+
+for email:
+    unique: true
+
+ ------------------Custom Schema Validation----------
+For string:
+validate:{
+      validator: function(v){
+            return v.length===10;
+      },
+      message: (props)=> `${props.value} is not  vallid`
+
+}
+
+for phone:
+
+    validate: {
+      validator: function(v) {
+        return /^(\+8801|8801|01)[3-9]\d{8}$/.test(v);
+      },
+      message: props => `${props.value} is not a valid phone number!`
+    },
+
+  
