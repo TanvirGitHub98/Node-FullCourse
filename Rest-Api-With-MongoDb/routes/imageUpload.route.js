@@ -1,4 +1,4 @@
-const {uploadImage,loadImage} = require('../controller/imageUpload.controller');
+const {uploadMyImage,loadImage} = require('../controller/imageUpload.controller');
 const multer  = require('multer')
 const route=require('express').Router();
 
@@ -19,6 +19,6 @@ const storage = multer.diskStorage({
 
 
 route.get('/upload',loadImage)
-route.post('/upload',upload.single('image'),uploadImage)
+route.post('/upload',upload.single('image'),uploadMyImage)
 
 module.exports=route;
