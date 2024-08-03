@@ -2,6 +2,7 @@ const express=require('express')
 const morgan=require('morgan')
 const app=express();
 const cors=require('cors')
+const chalk=require('chalk')
 const homeRoute=require('./routes/home.route')
 const userRoute=require('./routes/user.routes')
 const uploadRoute=require('./routes/imageUpload.route')
